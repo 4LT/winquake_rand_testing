@@ -47,6 +47,6 @@ int main() {
     int i;
 
     for (i = 0; i < 50; i++) {
-        printf("%f\n", pf_rand());
+        printf("%.1f\n", pf_rand());
     }
 }
