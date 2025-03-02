@@ -1,10 +1,15 @@
 
 void() InitBodyQue;
 
+void(float f) println_flt = {
+    bprint(ftos(f));
+    bprint("\n");
+}
 
 void() main =
 {
 	dprint ("main function\n");
+
 	
 // these are just commands the the prog compiler to copy these files
 
@@ -171,8 +176,19 @@ World Types:
 //=======================
 void() worldspawn =
 {
+    entity etmp;
+    float i;
+
+    for (i = 0; i < 50; i++) {
+        etmp = spawn();
+        etmp.state = random();
+        etmp.classname = "rnd";
+        eprint(etmp);
+    }
+
 	lastspawn = world;
 	InitBodyQue ();
+
 
 // custom map attributes
 	if (self.model == "maps/e1m8.bsp")
